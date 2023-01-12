@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테스트 페이지 입니다</title>
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+
+    <div id="video-box">
+        <div class="caution_txt">
+            <p><span style="color:#ff0016;font-weight:700;font-size:18px;">(주)위니즈</span> 제품의 이미지와 상표명을 무단으로 사용 시 법적 처분을
+                받을 수 있습니다</p>
+        </div>
+
+        <div class="main-banner ">
+            <video autoplay muted>
+                <source src="video/home.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="main-banner open">
+            <video autoplay muted>
+                <source src="video/home1_1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="dot-box" style="z-index:100"></div>
+    </div>
+
+
+
+    <!-- <div class="main_con">
+        <div class="swiper main_slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <iframe width="100%" height="900" src="https://www.youtube.com/embed/ZmFNlhiwdx8?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div> -->
+
+
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+
+    <script>
+
+        // 메인슬라이드
+
+        var swiper = new Swiper(".main_slider", {
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+
+        var swiper2 = new Swiper(".mySwiper2", {
+            loop: true,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".slide01_container .swiper-button-next",
+                prevEl: ".slide01_container .swiper-button-prev",
+            },
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+
+        var swiper = new Swiper(".mySwiper3", {
+            autoplay: true,
+            speed: 2000,
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
+            loop: true,
+            navigation: {
+                nextEl: ".goods_banner .swiper-button-next",
+                prevEl: ".goods_banner .swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            // on: {
+            //     slideChange: function () {
+            //     alert('슬라이드 변경');
+            //     }
+            // }
+        });
+
+        $(function () {
+            function set_video_size() {
+                var vh = $('body').height() - top_height;
+                var vw = $('body').width();
+                if (vw / vh > (1920 / 1080)) {
+                    $('.main-banner video').css({ 'width': '1920px', 'height': 'auto' })
+                } else {
+                    $('.main-banner video').css({ 'height': '100%', 'width': 'auto' })
+                }
+            }
+
+            var top_height = 90;
+            $(window).resize(function (e) {
+                $('#video-box').height($('body').height() - top_height);
+                set_video_size();
+            });
+            $('#video-box').height($('body').height() - top_height);
+            set_video_size();
+
+
+
+
+            $('#video-box').height($('body').height() - top_height);
+
+
+            var len = $('.main-banner').length
+            $('.main-banner').each(function (index, element) {
+                $(this).addClass('v' + index);
+                var video = $(this).find('video')[0];
+                video.onended = function (e) {
+                    $('.main-banner').removeClass('open');
+                    $('.main-banner.v' + ((index + 1) % len)).addClass('open');
+                    $('.main-banner.v' + ((index + 1) % len)).find('video')[0].play();
+                    $('#video-box a.dot').removeClass('open');
+                    $('#video-box a.dot.v' + ((index + 1) % len)).addClass('open');
+                };
+                $('#video-box .dot-box').append('<a href="#" class="dot v' + index + '" data-idx="' + index + '">' + (index + 1) + '번째 비디오</a>');
+            });
+
+            $('#video-box a.dot').click(function (e) {
+                var idx = $(this).data('idx');
+                $('.main-banner.open').find('video')[0].pause();
+                $('.main-banner').removeClass('open');
+                $('.main-banner.v' + (idx % len)).addClass('open');
+                $('.main-banner.v' + (idx % len)).find('video')[0].play();
+                $('#video-box a.dot').removeClass('open');
+                $('#video-box a.dot.v' + (idx % len)).addClass('open');
+            });
+            $('#video-box a.dot.v0').addClass('open');
+        });
+
+        let listImg = document.getElementById('big_pic');
+        let imgTxt = document.getElementById('img_txt');
+
+
+
+
+    </script>
+
+    <!--명품입니다 섹션-->
+    <div id="buildup_list_wrap">
+        <div class="buildup_list">
+            <div class="list_title" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="200"
+                data-aos-delay="200">
+                <script>
+                    AOS.init(); 
+                </script><!--도장과 제목-->
+                <img src="img/gold_title.png" alt="">
+            </div>
+            <ul class="container">
+                <li><a
+                        href="http://www.winiz.net/bbs/board.php?bo_table=site&wr_id=233&sfl=wr_subject&stx=%EC%84%B8%EB%B8%8C&sop=and">
+                        <img src="img/buildlist_01-1.png" alt="">
+                        <p>
+                            세브란스 병원
+                        </p>
+                    </a>
+                </li>
+                <li><a href="http://www.winiz.net/bbs/board.php?bo_table=site&wr_id=644">
+                        <img src="img/buildlist_02-1.png" alt="">
+                        <p>
+                            국립 재활원
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <ul class="section3">
+                        <li><a
+                                href="http://www.winiz.net/bbs/board.php?bo_table=site&wr_id=564&sfl=wr_subject&stx=%EB%B6%80%EC%82%B0%EB%8C%80&sop=and">
+                                <img src="img/buildlist_03-2.png" alt="">
+                                <p>
+                                    양산 부산대학 병원
+                                </p>
+                            </a>
+
+                        </li>
+                        <li><a
+                                href="http://www.winiz.net/bbs/board.php?bo_table=site&wr_id=320&sfl=wr_subject&stx=%EC%9D%98%EB%A3%8C%EC%9B%90&sop=and">
+                                <img src="img/buildlist_04-2.png" alt="">
+                                <p>
+                                    부산의료원
+                                </p>
+                            </a>
+
+                        </li>
+
+                        <li><a
+                                href="http://www.winiz.net/bbs/board.php?bo_table=site&wr_id=34&sfl=wr_subject&stx=%EC%82%B0%EC%9E%AC&sop=and">
+                                <img src="img/buildlist_05-2.png" alt="">
+                                <p>
+                                    안산 산재병원
+                                </p>
+                            </a>
+
+                        </li>
+                        <li><a
+                                href="http://www.winiz.net/bbs/board.php?bo_table=site&wr_id=382&sfl=wr_subject&stx=%EC%9D%B4%EC%B2%9C&sop=and">
+                                <img src="img/buildlist_06-2.png" alt="">
+                                <p>
+                                    경기도의료원 이천병원
+                                </p>
+                            </a>
+
+                        </li>
+                        <li><a
+                                href="http://www.winiz.net/bbs/board.php?bo_table=site&wr_id=462&sfl=wr_subject&stx=%EC%B6%A9%EB%B6%81%EB%8C%80&sop=and">
+                                <img src="img/buildlist_07-2.png" alt="">
+                                <p>
+                                    충북대학교 병원
+                                </p>
+                            </a>
+
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="builduplist_link">
+                <a href="http://www.winiz.net/bbs/board.php?bo_table=site">설치 기관 더보기 <span>+</span></a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--메인 큰 로고 섹션-->
+    <div id="main_biglogo">
+        <div class="pic" data-aos="fade-left" data-aos-duration="1500" data-aos-offset="100" data-aos-delay="50">
+            <script>
+                AOS.init(); 
+            </script>
+            <img src="img/big_logo_full.png" alt="">
+        </div>
+        <div class="text">
+            <p class="p01">대한민국 No.1 명품 재활 의료기 전문기업
+                <br> <br>
+                (주)위니즈는 끊임없는 연구개발을 통해 특허받은 기술로
+                <br>모든 제품을 100% 자체 생산 합니다.
+            </p>
+            <p>
+                <img src="img/call_numb.png" alt="">
+            </p>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
