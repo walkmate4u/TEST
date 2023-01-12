@@ -1,0 +1,466 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*margin padding 초기 설정*/
+ul,
+ol {
+    list-style: none;
+}
+
+/*UL OL 불릿 없애기 초기 설정*/
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/*a태그 글자색 검정, 밑줄 없애기 */
+
+body {
+    font-family: "나눔고딕", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: black;
+}
+
+
+
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: rgb(255, 255, 255);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#video-box {
+    min-width: 1200px;
+    position: relative;
+}
+
+#video-box .main-banner {
+    display: none;
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+}
+
+#video-box .main-banner.open {
+    display: block;
+}
+
+#video-box .main-banner video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0;
+}
+
+#video-box .dot-box {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    text-align: center;
+}
+
+#video-box .dot-box a {
+    display: inline-block;
+    margin: 0.5em;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-indent: -9999px;
+}
+
+#video-box .dot-box a.open {
+    background-color: #00ccfc;
+}
+
+.main_ban_con {
+    width: 1200px;
+    text-align: left;
+}
+
+.main_ban_con h1 {
+    color: #00ccfc;
+    font-size: 38px;
+    line-height: 52px;
+    text-align: left;
+}
+
+.main_ban_con h5 {
+    font-size: 22px;
+    line-height: 24px;
+    padding: 10px 0px;
+    text-align: left;
+    color: #333
+}
+
+.main_ban_con p {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px 0px;
+    text-align: left;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+.main_top_line {
+    height: 1px;
+    background-color: #00ccfc;
+    width: 30px;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 80px;
+}
+
+.main_ban_con button {
+    background-color: transparent;
+}
+
+.main_ban_con .sub-btn {
+    font-size: 16px;
+    width: 200px;
+    height: 50px;
+}
+
+.main_ban_con .sub-btn.brightness01 {
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.main_ban_con .sub-btn.brightness01:hover {
+    background-color: #00ccfc;
+    color: #fff;
+}
+
+.main_ban_con .brightness01 a {
+    text-decoration: none;
+}
+
+.main-banner .main_txt_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.3)
+}
+
+.main-banner .main_txt_box .main_txt01 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.video_width {
+    width: 1920px !important;
+}
+
+
+#video-box {
+    min-width: 1200px;
+    position: relative;
+}
+
+#video-box .main-banner {
+    display: none;
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+}
+
+#video-box .main-banner.open {
+    display: block;
+}
+
+#video-box .main-banner video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0;
+}
+
+#video-box .dot-box {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    text-align: center;
+}
+
+#video-box .dot-box a {
+    display: inline-block;
+    margin: 0.5em;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-indent: -9999px;
+}
+
+#video-box .dot-box a.open {
+    background-color: #f50000;
+}
+
+
+
+
+/**********************************************/
+/* 전국 설치 현황 설정*/
+/**********************************************/
+
+
+#buildup_list_wrap {
+    width: 100%;
+    background-image: url(../img/buildlist_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.buildup_list {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.buildup_list .list_title {
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+.buildup_list .list_title img {
+    width: 50%;
+    display: inline-block;
+}
+
+.buildup_list .container {
+    width: 100%;
+    height: 101.1%;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buildup_list .container>li {
+    width: 32%;
+    position: relative;
+}
+
+
+.buildup_list .container>li>a {
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 102%;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.buildup_list .container>li>a>p {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 100);
+}
+
+.buildup_list .container img {
+    width: 100%;
+    display: block;
+
+}
+
+.buildup_list .container .section3 {
+    width: 100%;
+    height: 0;
+    padding-bottom: 99%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+
+.buildup_list .container .section3 li {
+    position: relative;
+    margin-bottom: 7px;
+}
+
+.buildup_list .container .section3 li a {
+    display: block;
+    width: 100%;
+}
+
+.buildup_list .container .section3 a img {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+.buildup_list .container .section3 li a p {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 100);
+}
+
+.buildup_list .container .section3 li:nth-child(1) a p {
+    margin-top: -12px;
+    margin-right: -80.8px;
+}
+
+.buildup_list .container .section3 li:nth-child(2) a p {
+    margin-top: -12px;
+    margin-right: -47px;
+}
+
+.buildup_list .container .section3 li:nth-child(3) a p {
+    margin-top: -12px;
+    margin-right: -59.2px;
+}
+
+.buildup_list .container .section3 li:nth-child(4) a p {
+    margin-top: -12px;
+    margin-right: -96.8px;
+}
+
+.buildup_list .container .section3 li:nth-child(5) a p {
+    margin-top: -12px;
+    margin-right: -67.2px;
+}
+
+
+.buildup_list .builduplist_link {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.buildup_list .builduplist_link a {
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 22px;
+    display: inline-block;
+    padding: 15px 30px;
+    border: #ffffff 1px solid;
+}
+
+
+.buildup_list .container li a:hover p {
+    transform: scale(1.05);
+}
+
+.buildup_list .container li a p {
+    transition: all 0.2s linear;
+}
+
+.buildup_list .builduplist_link:hover a {
+    transform: scale(1.05);
+}
+
+.buildup_list .builduplist_link a {
+    transition: all 0.2s linear;
+}
+
+
+
+
+
+/**********************************************/
+/* 로고 설정*/
+/**********************************************/
+#main_biglogo {
+    width: 70%;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    padding: 60px 0 40px;
+}
+
+#main_biglogo .pic {
+    width: 40%;
+    margin: 0 auto;
+}
+
+
+#main_biglogo img {
+    width: 100%;
+}
+
+#main_biglogo .text {
+    font-size: 24px;
+    color: #555555;
+    line-height: 35px;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 0 0 20px;
+    box-sizing: border-box;
+}
+
+#main_biglogo .text p {
+    padding: 10px 0;
+    text-align: center;
+    text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.7);
+}
+
+#main_biglogo .text .p01 {
+    padding: 0 0 10px;
+    text-align: center;
+    text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+}
+
+
+#main_biglogo .text img {
+    display: inline-block;
+    width: 70%;
+}
+
+#main_biglogo .text a {
+    display: inline-block;
+    margin: 25px 0 50px;
+    padding: 5px 30px;
+    border: 1px solid #555555;
+    color: #555555;
+    font-size: 1.2vw;
+}
+
+#main_biglogo .text .logo_back {
+    text-align: center;
+    vertical-align: middle;
+    opacity: 70%;
+}
+
+#main_biglogo .text .logo_back img {
+    width: 80%;
+}
